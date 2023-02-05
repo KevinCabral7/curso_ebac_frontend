@@ -10,7 +10,7 @@ function validarNumero(numberA, numberB){
     }
 }
 
-
+ 
 function sucesso(){
     result.style.display = 'block'
     result.style.padding = "5px 20px"
