@@ -55,7 +55,11 @@ describe("example to-do app", () => {
   });
 
   it("Deve deletar contato", () => {
-    cy.get(".contato:first > .sc-gueYoa > .delete").click();
-    cy.get(".contato:first").should("not.exist");
+    cy.get(".sc-iAEyYk > :nth-child(2)")
+      .invoke("text")
+      .then((contatoParaDeletar) => {
+        cy.get(":nth-child(2) > .sc-gueYoa > .delete").click();
+        cy.get(".contato").should("not.contain", contatoParaDeletar);
+      });
   });
 });
